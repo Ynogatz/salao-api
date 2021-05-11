@@ -9,6 +9,6 @@ routes.get('/', (req, res) => {
     `)
 })
 
-routes.use('/', usuarioRoutes)
+routes.use('/usuario', usuarioRoutes)
 
 module.exports = routes;

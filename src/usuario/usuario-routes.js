@@ -4,6 +4,9 @@ const UsuarioController = require('./usuario-controller');
 
 const usuarioController = new UsuarioController;
 
-usuarioRoutes.post('/usuario', usuarioController.index);
+usuarioRoutes.get('/', usuarioController.index);
+
+usuarioRoutes.post('/', usuarioController.create);
+
 
 module.exports = usuarioRoutes;
