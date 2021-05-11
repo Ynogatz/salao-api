@@ -1,5 +1,6 @@
 const express = require('express');
 const routes = express.Router();
+const usuarioRoutes = require('./usuario/usuario-routes');
 
 routes.get('/', (req, res) => {
     res.send(`
@@ -7,5 +8,7 @@ routes.get('/', (req, res) => {
         <h3>Rota de teste</h3>
     `)
 })
+
+routes.use('/', usuarioRoutes)
 
 module.exports = routes;
