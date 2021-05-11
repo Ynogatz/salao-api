@@ -18,11 +18,14 @@ class UsuarioController {
             const usuario = req.body;
 
             const novoUsuario = await Usuario.create(usuario)
-            res.send({ usuario })
-
+            novoUsuario.senha = undefined;
+            res.send({ novoUsuario })
         } catch (e) {
             next(e)
         }
     }
+
+
+
 }
 module.exports = UsuarioController;
