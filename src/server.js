@@ -11,7 +11,6 @@ app.use(morgan('dev'));
 
 app.use('/', routes)
 
-
 app.listen(SERVER_PORT, () => {
     console.log(`Aplicação rodando na porta: ${SERVER_PORT}`)
 })

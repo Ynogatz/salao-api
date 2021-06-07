@@ -30,7 +30,7 @@ class UsuarioController {
 
             const novoUsuario = await Usuario.create(usuario)
             novoUsuario.senha = undefined;
-            res.send({ novoUsuario })
+            res.send({ novoUsuario }).status(200)
         } catch (e) {
             next(e)
         }
@@ -51,7 +51,7 @@ class UsuarioController {
             res.send({
                 usuario,
                 token:generateToken(usuario)
-            })
+            }).status(200)
 
         } catch (erro) {
             next({ erro })
