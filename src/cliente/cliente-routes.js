@@ -5,7 +5,7 @@ const clienteController = new ClienteController;
 
 clienteRoutes.get('/', clienteController.index)
 
-clienteRoutes.post('/', clienteController.create)
+clienteRoutes.post('/cadastro', clienteController.create)
 
 clienteRoutes.put('/:id', clienteController.update)
 
