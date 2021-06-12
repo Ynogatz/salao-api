@@ -31,7 +31,7 @@ class UsuarioController {
 
             const novoUsuario = await Usuario.create(usuario)
             novoUsuario.senha = undefined;
-            res.send({ novoUsuario }).status(200)
+            res.send(`Usuário ${novoUsuario.nome} criado com sucesso!`).status(200)
         } catch (e) {
             next(e)
         }
