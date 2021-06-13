@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const UsuarioSchema = new db.Schema({
     nome: {
         type: String,
-        minLength: [4, "Nome deve conter pelo menos 4 digitos"],
+        minLength: [3, "Nome deve conter pelo menos 4 digitos"],
         required: [true, "Nome obrigatório"]
     },
     login: {
@@ -26,11 +26,11 @@ const UsuarioSchema = new db.Schema({
     }
 })
 
-UsuarioSchema.pre('save', async function (next) {
+UsuarioSchema.pre('save', async function(next) {
     const hash = await bcrypt.hash(this.senha, 10);
     this.senha = hash;
     next();
-        
+
 })
 
 const Usuario = db.model('Usuario', UsuarioSchema);

@@ -5,11 +5,13 @@ const authMiddleware = require('../middlewares/auth')
 
 const usuarioController = new UsuarioController;
 
-usuarioRoutes.get('/',authMiddleware, usuarioController.index);
+usuarioRoutes.get('/', authMiddleware, usuarioController.index);
 
-usuarioRoutes.post('/registro', usuarioController.create);
+usuarioRoutes.post('/cadastro', usuarioController.create);
 
 usuarioRoutes.post('/autenticacao', usuarioController.autenticacao)
+
+usuarioRoutes.get('/teste', authMiddleware, usuarioController.teste)
 
 
 module.exports = usuarioRoutes;

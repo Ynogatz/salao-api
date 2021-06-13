@@ -4,7 +4,8 @@ const db = require('mongoose');
 
 db.connect(MONGO_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 }).then(() => {
     console.log("Conexão com banco de dados estabelecida com sucesso!")
 }).catch((erro) => {
