@@ -11,6 +11,6 @@ const ImpostoSchema = db.Schema({
     }
 })
 
-const Imposto = db.model('Imposto', ImpostoSchema);
+const Imposto = db.model('imposto', ImpostoSchema);
 
 module.exports = Imposto;

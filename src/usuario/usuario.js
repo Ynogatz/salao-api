@@ -33,6 +33,6 @@ UsuarioSchema.pre('save', async function(next) {
 
 })
 
-const Usuario = db.model('Usuario', UsuarioSchema);
+const Usuario = db.model('usuario', UsuarioSchema);
 
 module.exports = Usuario

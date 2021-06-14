@@ -11,7 +11,4 @@ usuarioRoutes.post('/cadastro', usuarioController.create);
 
 usuarioRoutes.post('/autenticacao', usuarioController.autenticacao)
 
-usuarioRoutes.get('/teste', authMiddleware, usuarioController.teste)
-
-
 module.exports = usuarioRoutes;

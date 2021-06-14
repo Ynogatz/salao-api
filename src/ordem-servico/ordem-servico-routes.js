@@ -10,6 +10,6 @@ ordemServicoRoutes.get('/lista-por-usuario-logado', authMiddleware, ordemServico
 
 ordemServicoRoutes.get('/lista-por-usuario', authMiddleware, ordemServicoController.listByUser);
 
-ordemServicoRoutes.post('/cadastro', authMiddleware, ordemServicoController.create)
+ordemServicoRoutes.post('/add', authMiddleware, ordemServicoController.create)
 
 module.exports = ordemServicoRoutes;

@@ -3,12 +3,12 @@ const ClienteController = require('./cliente-controller');
 
 const clienteController = new ClienteController;
 
-clienteRoutes.get('/', clienteController.index)
+clienteRoutes.get('/list/:id', clienteController.index)
 
 clienteRoutes.post('/cadastro', clienteController.create)
 
-clienteRoutes.put('/:id', clienteController.update)
+clienteRoutes.put('/edit/:id', clienteController.update)
 
-clienteRoutes.delete('/:id', clienteController.destroy)
+clienteRoutes.delete('/delete/:id', clienteController.destroy)
 
 module.exports = clienteRoutes

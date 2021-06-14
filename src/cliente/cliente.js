@@ -28,6 +28,6 @@ const ClienteSchema = db.Schema({
 })
 
 
-const Cliente = db.model('Cliente', ClienteSchema);
+const Cliente = db.model('cliente', ClienteSchema);
 
 module.exports = Cliente;

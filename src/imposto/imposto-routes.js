@@ -3,12 +3,12 @@ const impostoRoutes = require('express').Router();
 
 const impostoController = new ImpostoController;
 
-impostoRoutes.get('/', impostoController.index);
+impostoRoutes.get('/list/:id', impostoController.index);
 
-impostoRoutes.post('/', impostoController.create);
+impostoRoutes.post('/add', impostoController.create);
 
-impostoRoutes.put('/', impostoController.update);
+impostoRoutes.put('/edit/:id', impostoController.update);
 
-impostoRoutes.delete('/', impostoController.destroy);
+impostoRoutes.delete('/delete/:id', impostoController.destroy);
 
 module.exports = impostoRoutes;

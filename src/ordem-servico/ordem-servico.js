@@ -18,6 +18,6 @@ const OrdemServicoSchema = db.Schema({
     }
 })
 
-const OrdemServico = db.model('OrdemServico', OrdemServicoSchema);
+const OrdemServico = db.model('ordem-servico', OrdemServicoSchema);
 
 module.exports = OrdemServico;

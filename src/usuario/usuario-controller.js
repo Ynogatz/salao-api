@@ -50,26 +50,15 @@ class UsuarioController {
 
                 usuario.senha = undefined
 
-
                 res.send({
                     token: generateToken(usuario)
                 }).status(200)
             } else res.send({ erro: 'Login e senha devem ser preenchidos' }).status(400)
 
 
-        } catch (erro) {
-            next({ erro })
+        } catch (e) {
+            next(e)
         }
-    }
-
-    teste(req, res, next) {
-        let token = req.headers.authorization
-
-        token = token.split(' ')[1]
-
-        const userData = jwt.decode(token)
-
-        res.send(userData.usuario.senha)
     }
 
 }
