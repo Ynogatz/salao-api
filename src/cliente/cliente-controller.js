@@ -1,4 +1,7 @@
 const Cliente = require('./cliente');
+const ClienteService = require('./cliente-service');
+const clienteService = new ClienteService
+
 
 class ClienteController {
     async index(req, res, next) {
@@ -13,7 +16,11 @@ class ClienteController {
         try {
             const body = req.body;
             const novoCliente = await Cliente.create(body)
-            res.send(novoCliente)
+            const token = req.headers.authorization;
+
+            if (clienteService.decodeJwt(token)) res.send(`Cliente ${novoCliente.nome} incluido com sucesso!`)
+            else res.send("Você não possui permissão para criar usuários")
+
         } catch (e) {
             next(e)
         }

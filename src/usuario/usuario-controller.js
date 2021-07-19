@@ -39,10 +39,10 @@ class UsuarioController {
 
     async autenticacao(req, res, next) {
         try {
-            const { login, senha } = req.body;
+            const { email, senha } = req.body;
 
-            if (usuarioService.verificaCampos(login, senha)) {
-                const usuario = await Usuario.findOne({ login }).select('+senha')
+            if (usuarioService.verificaCampos(email, senha)) {
+                const usuario = await Usuario.findOne({ email }).select('+senha')
 
                 if (!usuario) return res.status(400).send({ erro: "Usuário não encontrado" })
 

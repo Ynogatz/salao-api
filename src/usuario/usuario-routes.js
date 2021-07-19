@@ -7,7 +7,7 @@ const usuarioController = new UsuarioController;
 
 usuarioRoutes.get('/', authMiddleware, usuarioController.index);
 
-usuarioRoutes.post('/cadastro', usuarioController.create);
+usuarioRoutes.post('/add', usuarioController.create);
 
 usuarioRoutes.post('/autenticacao', usuarioController.autenticacao)
 

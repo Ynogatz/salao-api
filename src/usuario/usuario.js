@@ -1,5 +1,6 @@
 const db = require('../database/db');
 const bcrypt = require('bcrypt');
+const { Schema } = require('mongoose');
 
 const UsuarioSchema = new db.Schema({
     nome: {
@@ -7,11 +8,9 @@ const UsuarioSchema = new db.Schema({
         minLength: [3, "Nome deve conter pelo menos 4 digitos"],
         required: [true, "Nome obrigatório"]
     },
-    login: {
+    cpf: {
         type: String,
-        minLength: [5, "Login deve conter pelo menos 5 digitos"],
-        required: [true, "Login obrigatório"],
-        // unique: [true, "Este usuário já está em uso"]
+        required: [true, "CPF obrigatório"]
     },
     email: {
         type: String,
@@ -23,7 +22,13 @@ const UsuarioSchema = new db.Schema({
         type: String,
         minLength: [5, "Senha deve conter pelo menos 5 digitos"],
         required: [true, "Senha obrigatório"],
-    }
+    },
+    cargo: {
+        type: String,
+        enum: ['ADMINISTRADOR', 'GESTOR', 'ATENDENTE'],
+        required: [true, "Cargo obrigatório"]
+    },
+
 })
 
 UsuarioSchema.pre('save', async function(next) {
