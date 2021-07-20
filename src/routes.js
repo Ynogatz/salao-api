@@ -4,7 +4,6 @@ const clienteRoutes = require('./cliente/cliente-routes');
 
 const ordemServicoRoutes = require('./ordem-servico/ordem-servico-routes');
 
-
 routes.get('/simulacao-evento', (req, res, next) => {
     res.send({ tipoAutomacao: 'ok' })
 })
